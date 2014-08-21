@@ -1,0 +1,12 @@
+lua:
+  methods:
+    toM4: |
+      btScalar m[16];
+      self->getOpenGLMatrix(m);
+      // A pointer to a 15 element array (12 rotation(row major padded on the right by 1), and 3 translation
+      lua_newtable(L);
+      for(size_t i = 0; i < 16; ++i) {
+        lua_pushnumber(L, m[i]);
+        lua_rawseti(L, -2, i+1);
+      }
+      return 1;

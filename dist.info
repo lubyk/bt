@@ -1,0 +1,14 @@
+name = "bt"
+version = "1.0.0"
+
+desc = ""
+author = "Copyright (c) 2003-2006 Erwin Coumans, Gaspard Bucher"
+license = "zlib"
+url = "http://doc.lubyk.org/bt.html"
+maintainer = "Copyright (c) 2003-2006 Erwin Coumans, Gaspard Bucher"
+
+depends = {
+  "lua >= 5.1, < 5.3",
+  "lub >= 1.0.3, < 2.0",
+}
+

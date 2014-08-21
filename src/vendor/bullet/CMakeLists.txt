@@ -429,11 +429,11 @@ list (APPEND BULLET_LIBRARIES BulletCollisions)
 list (APPEND BULLET_LIBRARIES BulletDynamics)
 list (APPEND BULLET_LIBRARIES BulletSoftBody)
 set (BULLET_USE_FILE ${CMAKE_INSTALL_PREFIX}/${BULLET_CONFIG_CMAKE_PATH}/UseBullet.cmake)
-configure_file ( ${CMAKE_SOURCE_DIR}/BulletConfig.cmake.in
+configure_file ( ${BULLET_SOURCE_DIR}/BulletConfig.cmake.in
                  ${CMAKE_CURRENT_BINARY_DIR}/BulletConfig.cmake
                  @ONLY ESCAPE_QUOTES
                )
-install ( FILES ${CMAKE_SOURCE_DIR}/UseBullet.cmake
+install ( FILES ${BULLET_SOURCE_DIR}/UseBullet.cmake
                 ${CMAKE_CURRENT_BINARY_DIR}/BulletConfig.cmake
           DESTINATION ${BULLET_CONFIG_CMAKE_PATH}
         )
