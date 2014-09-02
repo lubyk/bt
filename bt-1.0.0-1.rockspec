@@ -20,7 +20,7 @@ dependencies = {
 build = {
   type = 'cmake',
   variables = {
-    LUA_INSTALL_DIR = '/usr/local/lib/lua/5.1',
+    LUA_INSTALL_DIR = '/usr/local/share/lua/5.1',
   },
 }
 

@@ -5,16 +5,18 @@ h1. bt.World
 Create a world with default settings.
 
 --]]------------------------------------------------------
+local bt  = require 'bt'
 local lib = bt.DiscreteDynamicsWorld
 
-function bt.World(gravity)
+local new = lib.new
+function lib.new(gravity)
   -- We must store all these settings with the world to avoid garbage collection.
   local self = {}
   self.broadphase = bt.DbvtBroadphase()
   self.collisionConfiguration = bt.DefaultCollisionConfiguration()
   self.dispatcher = bt.CollisionDispatcher(self.collisionConfiguration)
   self.solver = bt.SequentialImpulseConstraintSolver()
-  self.super = bt.DiscreteDynamicsWorld(
+  self.super = new(
     self.dispatcher,
     self.broadphase,
     self.solver,
@@ -22,18 +24,17 @@ function bt.World(gravity)
   ) 
   setmetatable(self, getmetatable(self.super))
   self:setGravity(bt.Vector3(0,gravity or -10,0))
-  self:addGround()
   return self
 end
 
 function lib:addGround(restitution)
   local ground = {}
 
-  ground.shape  = bt.StaticPlaneShape(bt.Vector3(0,1,0),1)
+  ground.shape  = bt.StaticPlaneShape(bt.Vector3(0,1,0),0)
   ground.motion = bt.DefaultMotionState(
     bt.Transform(
       bt.Quaternion(0,0,0,1),
-      bt.Vector3(0,-1,0)
+      bt.Vector3(0,0,0)
     )
   )
 
@@ -43,11 +44,17 @@ function lib:addGround(restitution)
     ground.shape,
     bt.Vector3(0,0,0)
   )
-  ground.ci.m_restitution = restitution or 1.0
+  ground.ci.m_restitution = restitution or 1
+  --ground.ci.m_linearDamping  = 1
+  --ground.ci.m_angularDamping = 1
+  --ground.ci.m_angularDamping = 0.8
+
   ground.super = bt.RigidBody(ground.ci)
 
+  self:addRigidBody(ground)
+
   self.ground = ground
-  self:addRigidBody(self.ground)
+  return ground
 end
 
 function lib:addPlane(direction, transform, opts)
@@ -100,3 +107,5 @@ function lib:debugDrawer(gl_type)
   self:setDebugDrawer(drawer)
   return drawer
 end
+
+return lib

@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 
+
+set(BUILD_CPU_DEMOS off CACHE BOOL "Build original Bullet CPU demos")
+set(BUILD_BULLET2_DEMOS off CACHE BOOL "Set when you want to build the Bullet 2 demos")
 set(BUILD_EXTRAS off CACHE BOOL "Build Bullet extras")
 set(BUILD_DEMOS  off CACHE BOOL "Build Bullet demos")
 set(INSTALL_LIBS off CACHE BOOL "Install Bullet libs")
@@ -14,6 +17,5 @@ set(USE_GLUT off CACHE BOOL "Use Glut")
 # (can also choose one of Debug, Release, or MinSizeRel, see cmake --help-variable CMAKE_BUILD_TYPE)
 # Run cmake --help-variable-list to see (many) more options, or use the CMake GUI to interactively inve
 
-set(BULLET_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bullet)
 add_subdirectory(bullet)
 

@@ -16,7 +16,6 @@ end
 
 function should.work(t)
   lens.Scheduler():run(function()
-    print('start')
     local broadphase = bt.DbvtBroadphase()
     local collisionConfiguration = bt.DefaultCollisionConfiguration()
     local dispatcher = bt.CollisionDispatcher(collisionConfiguration)

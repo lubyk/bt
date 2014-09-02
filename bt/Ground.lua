@@ -11,7 +11,7 @@ function bt.Ground(restitution)
   local groundMotionState = bt.DefaultMotionState(
     bt.Transform(
       bt.Quaternion(0,0,0,1),
-      bt.Vector3(0,-1,0)
+      bt.Vector3(0,0,0)
     )
   )
 

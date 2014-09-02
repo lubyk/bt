@@ -56,7 +56,7 @@ endif(RELEASE)
 # --------------------------------------------------------------
 set(core "${MODULE_NAME}_core")
 
-include_directories(include src/bind src/vendor/bullet/src)
+include_directories(/usr/local/include include src/bind src/vendor/bullet/src)
 
 file(GLOB CORE_SOURCES src/*.cpp src/bind/*.cpp src/bind/dub/*.cpp)
 
@@ -73,10 +73,6 @@ set_target_properties(${core}
 
 add_subdirectory(src/vendor)
 target_link_libraries(${core} BulletSoftBody BulletDynamics BulletCollision LinearMath)
-if(LINUX)
-else(LINUX)
-  target_link_libraries(${core} BulletMultiThreaded MiniCL)
-endif(LINUX)
   
 
 add_dependencies(${MODULE_NAME} ${core})

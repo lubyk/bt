@@ -50,6 +50,7 @@ lib.BUILD = {
   github    = 'lubyk',
   sources   = {'src/*.cpp', 'src/bind/*.cpp', 'src/bind/dub/*.cpp'},
   includes  = {
+    '/usr/local/include', -- lua.h
     'include',
     'src/bind',
     'src/vendor/bullet/src',
@@ -58,10 +59,6 @@ lib.BUILD = {
   cmake_extra = [[
 add_subdirectory(src/vendor)
 target_link_libraries(${core} BulletSoftBody BulletDynamics BulletCollision LinearMath)
-if(LINUX)
-else(LINUX)
-  target_link_libraries(${core} BulletMultiThreaded MiniCL)
-endif(LINUX)
   ]],
 }
 
