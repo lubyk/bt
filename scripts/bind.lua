@@ -70,6 +70,7 @@ local ins = dub.Inspector {
     'btUnswapEndianDouble',
     'btSwapEndianFloat',
     'btUnswapEndianFloat',
+    'btGetInfinityMask',
     btDbvtBroadphase = {
       'm_sets',
       'm_stageRoots',
@@ -77,6 +78,9 @@ local ins = dub.Inspector {
     btCollisionObject = {
       'm_userObjectPointer',
       'm_userIndex',
+    },
+    btSequentialImpulseSolver = {
+      'getActiveConstraintRowSolverGeneric',
     },
   },
   -- html = true,
@@ -159,6 +163,7 @@ binder:bind(ins, {
     'btSequentialImpulseConstraintSolver',
     'btTypedConstraint',
     'btPoint2PointConstraint',
+    'btConstraintSetting',
     'btHingeConstraint',
     'btGeneric6DofSpringConstraint',
 

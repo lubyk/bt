@@ -11,7 +11,7 @@
 
 
 /** virtual btConstraintSolver::~btConstraintSolver()
- * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:44
+ * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:45
  */
 static int btConstraintSolver__btConstraintSolver(lua_State *L) {
   try {
@@ -31,7 +31,7 @@ static int btConstraintSolver__btConstraintSolver(lua_State *L) {
 }
 
 /** virtual void btConstraintSolver::prepareSolve(int, int)
- * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:46
+ * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:47
  */
 static int btConstraintSolver_prepareSolve(lua_State *L) {
   try {
@@ -49,7 +49,7 @@ static int btConstraintSolver_prepareSolve(lua_State *L) {
 }
 
 /** virtual btScalar btConstraintSolver::solveGroup(btCollisionObject **bodies, int numBodies, btPersistentManifold **manifold, int numManifolds, btTypedConstraint **constraints, int numConstraints, const btContactSolverInfo &info, class btIDebugDraw *debugDrawer, btDispatcher *dispatcher)=0
- * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:49
+ * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:50
  */
 static int btConstraintSolver_solveGroup(lua_State *L) {
   try {
@@ -74,7 +74,7 @@ static int btConstraintSolver_solveGroup(lua_State *L) {
 }
 
 /** virtual void btConstraintSolver::allSolved(const btContactSolverInfo &, class btIDebugDraw *)
- * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:51
+ * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:52
  */
 static int btConstraintSolver_allSolved(lua_State *L) {
   try {
@@ -92,7 +92,7 @@ static int btConstraintSolver_allSolved(lua_State *L) {
 }
 
 /** virtual void btConstraintSolver::reset()=0
- * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:54
+ * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:55
  */
 static int btConstraintSolver_reset(lua_State *L) {
   try {
@@ -108,7 +108,7 @@ static int btConstraintSolver_reset(lua_State *L) {
 }
 
 /** virtual btConstraintSolverType btConstraintSolver::getSolverType() const =0
- * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:56
+ * src/vendor/bullet/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h:57
  */
 static int btConstraintSolver_getSolverType(lua_State *L) {
   try {

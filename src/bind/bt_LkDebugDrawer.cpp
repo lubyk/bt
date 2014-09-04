@@ -107,7 +107,7 @@ static int LkDebugDrawer_getDebugMode(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawAabb(const btVector3 &from, const btVector3 &to, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:107
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:108
  */
 static int LkDebugDrawer_drawAabb(lua_State *L) {
   try {
@@ -126,7 +126,7 @@ static int LkDebugDrawer_drawAabb(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawTransform(const btTransform &transform, btScalar orthoLen)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:136
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:137
  */
 static int LkDebugDrawer_drawTransform(lua_State *L) {
   try {
@@ -144,7 +144,7 @@ static int LkDebugDrawer_drawTransform(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawArc(const btVector3 &center, const btVector3 &normal, const btVector3 &axis, btScalar radiusA, btScalar radiusB, btScalar minAngle, btScalar maxAngle, const btVector3 &color, bool drawSect, btScalar stepDegrees=btScalar(10.f))
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:144
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:145
  */
 static int LkDebugDrawer_drawArc(lua_State *L) {
   try {
@@ -185,7 +185,7 @@ static int LkDebugDrawer_drawArc(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawSpherePatch(const btVector3 &center, const btVector3 &up, const btVector3 &axis, btScalar radius, btScalar minTh, btScalar maxTh, btScalar minPs, btScalar maxPs, const btVector3 &color, btScalar stepDegrees=btScalar(10.f), bool drawCenter=true)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:169
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:170
  */
 static int LkDebugDrawer_drawSpherePatch(lua_State *L) {
   try {
@@ -240,7 +240,7 @@ static int LkDebugDrawer_drawSpherePatch(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawBox(const btVector3 &bbMin, const btVector3 &bbMax, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:276
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:277
  */
 static int LkDebugDrawer_drawBox(lua_State *L) {
   try {
@@ -269,7 +269,7 @@ static int LkDebugDrawer_drawBox(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawCapsule(btScalar radius, btScalar halfHeight, int upAxis, const btTransform &transform, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:307
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:308
  */
 static int LkDebugDrawer_drawCapsule(lua_State *L) {
   try {
@@ -290,7 +290,7 @@ static int LkDebugDrawer_drawCapsule(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawCylinder(btScalar radius, btScalar halfHeight, int upAxis, const btTransform &transform, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:365
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:366
  */
 static int LkDebugDrawer_drawCylinder(lua_State *L) {
   try {
@@ -311,7 +311,7 @@ static int LkDebugDrawer_drawCylinder(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawCone(btScalar radius, btScalar height, int upAxis, const btTransform &transform, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:391
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:392
  */
 static int LkDebugDrawer_drawCone(lua_State *L) {
   try {
@@ -332,7 +332,7 @@ static int LkDebugDrawer_drawCone(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawPlane(const btVector3 &planeNormal, btScalar planeConst, const btTransform &transform, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:428
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:429
  */
 static int LkDebugDrawer_drawPlane(lua_State *L) {
   try {
@@ -347,6 +347,22 @@ static int LkDebugDrawer_drawPlane(lua_State *L) {
     lua_pushfstring(L, "drawPlane: %s", e.what());
   } catch (...) {
     lua_pushfstring(L, "drawPlane: Unknown exception");
+  }
+  return dub::error(L);
+}
+
+/** virtual void btIDebugDraw::flushLines()
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:443
+ */
+static int LkDebugDrawer_flushLines(lua_State *L) {
+  try {
+    LkDebugDrawer *self = *((LkDebugDrawer **)dub::checksdata(L, 1, "bt.LkDebugDrawer"));
+    self->flushLines();
+    return 0;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "flushLines: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "flushLines: Unknown exception");
   }
   return dub::error(L);
 }
@@ -378,6 +394,7 @@ static const struct luaL_Reg LkDebugDrawer_member_methods[] = {
   { "drawCylinder" , LkDebugDrawer_drawCylinder },
   { "drawCone"     , LkDebugDrawer_drawCone },
   { "drawPlane"    , LkDebugDrawer_drawPlane },
+  { "flushLines"   , LkDebugDrawer_flushLines },
   { "__tostring"   , LkDebugDrawer___tostring },
   { "deleted"      , dub::isDeleted       },
   { NULL, NULL},

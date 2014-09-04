@@ -30,6 +30,59 @@ static int btPoint2PointConstraint__btPoint2PointConstraint(lua_State *L) {
   return dub::error(L);
 }
 
+/** Set attributes (key, value)
+ * 
+ */
+static int btPoint2PointConstraint__set_(lua_State *L) {
+
+  btPoint2PointConstraint *self = *((btPoint2PointConstraint **)dub::checksdata_n(L, 1, "bt.Point2PointConstraint"));
+  const char *key = luaL_checkstring(L, 2);
+  int key_h = dub::hash(key, 2);
+  switch(key_h) {
+    case 0: {
+      if (DUB_ASSERT_KEY(key, "m_setting")) break;
+      self->m_setting = **((btConstraintSetting **)dub::checksdata_n(L, 3, "bt.ConstraintSetting"));
+      return 0;
+    }
+  }
+  if (lua_istable(L, 1)) {
+    lua_rawset(L, 1);
+  } else {
+    luaL_error(L, KEY_EXCEPTION_MSG, key);
+  }
+  return 0;
+}
+
+/** Get attributes (key)
+ * 
+ */
+static int btPoint2PointConstraint__get_(lua_State *L) {
+
+  btPoint2PointConstraint *self = *((btPoint2PointConstraint **)dub::checksdata_n(L, 1, "bt.Point2PointConstraint", true));
+  const char *key = luaL_checkstring(L, 2);
+  // <self> "key" <mt>
+  // rawget(mt, key)
+  lua_pushvalue(L, 2);
+  // <self> "key" <mt> "key"
+  lua_rawget(L, -2);
+  if (!lua_isnil(L, -1)) {
+    // Found method.
+    return 1;
+  } else {
+    // Not in mt = attribute access.
+    lua_pop(L, 2);
+  }
+  int key_h = dub::hash(key, 2);
+  switch(key_h) {
+    case 0: {
+      if (DUB_ASSERT_KEY(key, "m_setting")) break;
+      dub::pushudata(L, &self->m_setting, "bt.ConstraintSetting", false);
+      return 1;
+    }
+  }
+  return 0;
+}
+
 /** Cast (class_name)
  * 
  */
@@ -78,6 +131,23 @@ static int btPoint2PointConstraint_btPoint2PointConstraint(lua_State *L) {
   return dub::error(L);
 }
 
+/** void btPoint2PointConstraint::setPivotB(const btVector3 &pivotB)
+ * bind/btPoint2PointConstraint.h:7
+ */
+static int btPoint2PointConstraint_setPivotB(lua_State *L) {
+  try {
+    btPoint2PointConstraint *self = *((btPoint2PointConstraint **)dub::checksdata(L, 1, "bt.Point2PointConstraint"));
+    btVector3 *pivotB = *((btVector3 **)dub::checksdata(L, 2, "bt.Vector3"));
+    self->setPivotB(*pivotB);
+    return 0;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "setPivotB: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "setPivotB: Unknown exception");
+  }
+  return dub::error(L);
+}
+
 
 
 // --=============================================== __tostring
@@ -92,8 +162,11 @@ static int btPoint2PointConstraint___tostring(lua_State *L) {
 
 static const struct luaL_Reg btPoint2PointConstraint_member_methods[] = {
   { "__gc"         , btPoint2PointConstraint__btPoint2PointConstraint },
+  { "__newindex"   , btPoint2PointConstraint__set_ },
+  { "__index"      , btPoint2PointConstraint__get_ },
   { "_cast_"       , btPoint2PointConstraint__cast_ },
   { "new"          , btPoint2PointConstraint_btPoint2PointConstraint },
+  { "setPivotB"    , btPoint2PointConstraint_setPivotB },
   { "__tostring"   , btPoint2PointConstraint___tostring },
   { "deleted"      , dub::isDeleted       },
   { NULL, NULL},

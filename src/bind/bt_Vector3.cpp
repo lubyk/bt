@@ -794,7 +794,7 @@ static int btVector3_isZero(lua_State *L) {
 }
 
 /** bool btVector3::fuzzyZero() const
- * src/vendor/bullet/src/LinearMath/btVector3.h:688
+ * src/vendor/bullet/src/LinearMath/btVector3.h:689
  */
 static int btVector3_fuzzyZero(lua_State *L) {
   try {
@@ -810,7 +810,7 @@ static int btVector3_fuzzyZero(lua_State *L) {
 }
 
 /** void btVector3::serialize(struct btVector3Data &dataOut) const
- * src/vendor/bullet/src/LinearMath/btVector3.h:693
+ * src/vendor/bullet/src/LinearMath/btVector3.h:694
  */
 static int btVector3_serialize(lua_State *L) {
   try {
@@ -827,7 +827,7 @@ static int btVector3_serialize(lua_State *L) {
 }
 
 /** void btVector3::deSerialize(const struct btVector3Data &dataIn)
- * src/vendor/bullet/src/LinearMath/btVector3.h:695
+ * src/vendor/bullet/src/LinearMath/btVector3.h:696
  */
 static int btVector3_deSerialize(lua_State *L) {
   try {
@@ -844,7 +844,7 @@ static int btVector3_deSerialize(lua_State *L) {
 }
 
 /** void btVector3::serializeFloat(struct btVector3FloatData &dataOut) const
- * src/vendor/bullet/src/LinearMath/btVector3.h:697
+ * src/vendor/bullet/src/LinearMath/btVector3.h:698
  */
 static int btVector3_serializeFloat(lua_State *L) {
   try {
@@ -861,7 +861,7 @@ static int btVector3_serializeFloat(lua_State *L) {
 }
 
 /** void btVector3::deSerializeFloat(const struct btVector3FloatData &dataIn)
- * src/vendor/bullet/src/LinearMath/btVector3.h:699
+ * src/vendor/bullet/src/LinearMath/btVector3.h:700
  */
 static int btVector3_deSerializeFloat(lua_State *L) {
   try {
@@ -878,7 +878,7 @@ static int btVector3_deSerializeFloat(lua_State *L) {
 }
 
 /** void btVector3::serializeDouble(struct btVector3DoubleData &dataOut) const
- * src/vendor/bullet/src/LinearMath/btVector3.h:701
+ * src/vendor/bullet/src/LinearMath/btVector3.h:702
  */
 static int btVector3_serializeDouble(lua_State *L) {
   try {
@@ -895,7 +895,7 @@ static int btVector3_serializeDouble(lua_State *L) {
 }
 
 /** void btVector3::deSerializeDouble(const struct btVector3DoubleData &dataIn)
- * src/vendor/bullet/src/LinearMath/btVector3.h:703
+ * src/vendor/bullet/src/LinearMath/btVector3.h:704
  */
 static int btVector3_deSerializeDouble(lua_State *L) {
   try {
@@ -912,7 +912,7 @@ static int btVector3_deSerializeDouble(lua_State *L) {
 }
 
 /** long btVector3::maxDot(const btVector3 *array, long array_count, btScalar &dotOut) const
- * src/vendor/bullet/src/LinearMath/btVector3.h:709
+ * src/vendor/bullet/src/LinearMath/btVector3.h:710
  */
 static int btVector3_maxDot(lua_State *L) {
   try {
@@ -931,7 +931,7 @@ static int btVector3_maxDot(lua_State *L) {
 }
 
 /** long btVector3::minDot(const btVector3 *array, long array_count, btScalar &dotOut) const
- * src/vendor/bullet/src/LinearMath/btVector3.h:715
+ * src/vendor/bullet/src/LinearMath/btVector3.h:716
  */
 static int btVector3_minDot(lua_State *L) {
   try {
@@ -950,7 +950,7 @@ static int btVector3_minDot(lua_State *L) {
 }
 
 /** btVector3 btVector3::dot3(const btVector3 &v0, const btVector3 &v1, const btVector3 &v2) const
- * src/vendor/bullet/src/LinearMath/btVector3.h:718
+ * src/vendor/bullet/src/LinearMath/btVector3.h:719
  */
 static int btVector3_dot3(lua_State *L) {
   try {

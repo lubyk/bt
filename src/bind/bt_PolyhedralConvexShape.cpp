@@ -660,7 +660,7 @@ static int btPolyhedralConvexShape_project(lua_State *L) {
 }
 
 /** virtual void btCollisionShape::getBoundingSphere(btVector3 &center, btScalar &radius) const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:48
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:49
  */
 static int btPolyhedralConvexShape_getBoundingSphere(lua_State *L) {
   try {
@@ -678,7 +678,7 @@ static int btPolyhedralConvexShape_getBoundingSphere(lua_State *L) {
 }
 
 /** virtual btScalar btCollisionShape::getAngularMotionDisc() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:51
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:52
  */
 static int btPolyhedralConvexShape_getAngularMotionDisc(lua_State *L) {
   try {
@@ -694,7 +694,7 @@ static int btPolyhedralConvexShape_getAngularMotionDisc(lua_State *L) {
 }
 
 /** virtual btScalar btCollisionShape::getContactBreakingThreshold(btScalar defaultContactThresholdFactor) const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:53
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:54
  */
 static int btPolyhedralConvexShape_getContactBreakingThreshold(lua_State *L) {
   try {
@@ -711,7 +711,7 @@ static int btPolyhedralConvexShape_getContactBreakingThreshold(lua_State *L) {
 }
 
 /** void btCollisionShape::calculateTemporalAabb(const btTransform &curTrans, const btVector3 &linvel, const btVector3 &angvel, btScalar timeStep, btVector3 &temporalAabbMin, btVector3 &temporalAabbMax) const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:58
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:59
  */
 static int btPolyhedralConvexShape_calculateTemporalAabb(lua_State *L) {
   try {
@@ -733,7 +733,7 @@ static int btPolyhedralConvexShape_calculateTemporalAabb(lua_State *L) {
 }
 
 /** bool btCollisionShape::isPolyhedral() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:62
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:63
  */
 static int btPolyhedralConvexShape_isPolyhedral(lua_State *L) {
   try {
@@ -749,7 +749,7 @@ static int btPolyhedralConvexShape_isPolyhedral(lua_State *L) {
 }
 
 /** bool btCollisionShape::isConvex2d() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:67
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:68
  */
 static int btPolyhedralConvexShape_isConvex2d(lua_State *L) {
   try {
@@ -765,7 +765,7 @@ static int btPolyhedralConvexShape_isConvex2d(lua_State *L) {
 }
 
 /** bool btCollisionShape::isConvex() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:72
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:73
  */
 static int btPolyhedralConvexShape_isConvex(lua_State *L) {
   try {
@@ -781,7 +781,7 @@ static int btPolyhedralConvexShape_isConvex(lua_State *L) {
 }
 
 /** bool btCollisionShape::isNonMoving() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:76
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:77
  */
 static int btPolyhedralConvexShape_isNonMoving(lua_State *L) {
   try {
@@ -797,7 +797,7 @@ static int btPolyhedralConvexShape_isNonMoving(lua_State *L) {
 }
 
 /** bool btCollisionShape::isConcave() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:80
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:81
  */
 static int btPolyhedralConvexShape_isConcave(lua_State *L) {
   try {
@@ -813,7 +813,7 @@ static int btPolyhedralConvexShape_isConcave(lua_State *L) {
 }
 
 /** bool btCollisionShape::isCompound() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:84
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:85
  */
 static int btPolyhedralConvexShape_isCompound(lua_State *L) {
   try {
@@ -829,7 +829,7 @@ static int btPolyhedralConvexShape_isCompound(lua_State *L) {
 }
 
 /** bool btCollisionShape::isSoftBody() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:89
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:90
  */
 static int btPolyhedralConvexShape_isSoftBody(lua_State *L) {
   try {
@@ -845,7 +845,7 @@ static int btPolyhedralConvexShape_isSoftBody(lua_State *L) {
 }
 
 /** bool btCollisionShape::isInfinite() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:95
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:96
  */
 static int btPolyhedralConvexShape_isInfinite(lua_State *L) {
   try {
@@ -861,7 +861,7 @@ static int btPolyhedralConvexShape_isInfinite(lua_State *L) {
 }
 
 /** virtual const char* btCollisionShape::getName() const =0
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:107
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:108
  */
 static int btPolyhedralConvexShape_getName(lua_State *L) {
   try {
@@ -877,7 +877,7 @@ static int btPolyhedralConvexShape_getName(lua_State *L) {
 }
 
 /** int btCollisionShape::getShapeType() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:111
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:112
  */
 static int btPolyhedralConvexShape_getShapeType(lua_State *L) {
   try {
@@ -893,7 +893,7 @@ static int btPolyhedralConvexShape_getShapeType(lua_State *L) {
 }
 
 /** virtual btVector3 btCollisionShape::getAnisotropicRollingFrictionDirection() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:115
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:116
  */
 static int btPolyhedralConvexShape_getAnisotropicRollingFrictionDirection(lua_State *L) {
   try {
@@ -909,7 +909,7 @@ static int btPolyhedralConvexShape_getAnisotropicRollingFrictionDirection(lua_St
 }
 
 /** void btCollisionShape::setUserPointer(void *userPtr)
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:124
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:125
  */
 static int btPolyhedralConvexShape_setUserPointer(lua_State *L) {
   try {
@@ -926,7 +926,7 @@ static int btPolyhedralConvexShape_setUserPointer(lua_State *L) {
 }
 
 /** void* btCollisionShape::getUserPointer() const
- * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:129
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:130
  */
 static int btPolyhedralConvexShape_getUserPointer(lua_State *L) {
   try {
@@ -941,8 +941,41 @@ static int btPolyhedralConvexShape_getUserPointer(lua_State *L) {
   return dub::error(L);
 }
 
-/** virtual void btCollisionShape::serializeSingleShape(btSerializer *serializer) const
+/** void btCollisionShape::setUserIndex(int index)
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:134
+ */
+static int btPolyhedralConvexShape_setUserIndex(lua_State *L) {
+  try {
+    btPolyhedralConvexShape *self = *((btPolyhedralConvexShape **)dub::checksdata(L, 1, "bt.PolyhedralConvexShape"));
+    int index = dub::checkint(L, 2);
+    self->setUserIndex(index);
+    return 0;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "setUserIndex: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "setUserIndex: Unknown exception");
+  }
+  return dub::error(L);
+}
+
+/** int btCollisionShape::getUserIndex() const
  * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:139
+ */
+static int btPolyhedralConvexShape_getUserIndex(lua_State *L) {
+  try {
+    btPolyhedralConvexShape *self = *((btPolyhedralConvexShape **)dub::checksdata(L, 1, "bt.PolyhedralConvexShape"));
+    lua_pushnumber(L, self->getUserIndex());
+    return 1;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "getUserIndex: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "getUserIndex: Unknown exception");
+  }
+  return dub::error(L);
+}
+
+/** virtual void btCollisionShape::serializeSingleShape(btSerializer *serializer) const
+ * src/vendor/bullet/src/BulletCollision/CollisionShapes/btCollisionShape.h:150
  */
 static int btPolyhedralConvexShape_serializeSingleShape(lua_State *L) {
   try {
@@ -1023,6 +1056,8 @@ static const struct luaL_Reg btPolyhedralConvexShape_member_methods[] = {
   { "getAnisotropicRollingFrictionDirection", btPolyhedralConvexShape_getAnisotropicRollingFrictionDirection },
   { "setUserPointer", btPolyhedralConvexShape_setUserPointer },
   { "getUserPointer", btPolyhedralConvexShape_getUserPointer },
+  { "setUserIndex" , btPolyhedralConvexShape_setUserIndex },
+  { "getUserIndex" , btPolyhedralConvexShape_getUserIndex },
   { "serializeSingleShape", btPolyhedralConvexShape_serializeSingleShape },
   { "__tostring"   , btPolyhedralConvexShape___tostring },
   { "deleted"      , dub::isDeleted       },

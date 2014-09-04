@@ -1061,25 +1061,8 @@ static int btRigidBody_isInWorld(lua_State *L) {
   return dub::error(L);
 }
 
-/** virtual bool btRigidBody::checkCollideWithOverride(const btCollisionObject *co) const
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:509
- */
-static int btRigidBody_checkCollideWithOverride(lua_State *L) {
-  try {
-    btRigidBody *self = *((btRigidBody **)dub::checksdata(L, 1, "bt.RigidBody"));
-    btCollisionObject *co = *((btCollisionObject **)dub::checksdata(L, 2, "bt.CollisionObject"));
-    lua_pushboolean(L, self->checkCollideWithOverride(co));
-    return 1;
-  } catch (std::exception &e) {
-    lua_pushfstring(L, "checkCollideWithOverride: %s", e.what());
-  } catch (...) {
-    lua_pushfstring(L, "checkCollideWithOverride: Unknown exception");
-  }
-  return dub::error(L);
-}
-
 /** void btRigidBody::addConstraintRef(btTypedConstraint *c)
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:511
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:509
  */
 static int btRigidBody_addConstraintRef(lua_State *L) {
   try {
@@ -1096,7 +1079,7 @@ static int btRigidBody_addConstraintRef(lua_State *L) {
 }
 
 /** void btRigidBody::removeConstraintRef(btTypedConstraint *c)
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:512
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:510
  */
 static int btRigidBody_removeConstraintRef(lua_State *L) {
   try {
@@ -1113,7 +1096,7 @@ static int btRigidBody_removeConstraintRef(lua_State *L) {
 }
 
 /** btTypedConstraint* btRigidBody::getConstraintRef(int index)
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:514
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:512
  */
 static int btRigidBody_getConstraintRef(lua_State *L) {
   try {
@@ -1132,7 +1115,7 @@ static int btRigidBody_getConstraintRef(lua_State *L) {
 }
 
 /** int btRigidBody::getNumConstraintRefs() const
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:519
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:517
  */
 static int btRigidBody_getNumConstraintRefs(lua_State *L) {
   try {
@@ -1148,7 +1131,7 @@ static int btRigidBody_getNumConstraintRefs(lua_State *L) {
 }
 
 /** void btRigidBody::setFlags(int flags)
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:524
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:522
  */
 static int btRigidBody_setFlags(lua_State *L) {
   try {
@@ -1165,7 +1148,7 @@ static int btRigidBody_setFlags(lua_State *L) {
 }
 
 /** int btRigidBody::getFlags() const
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:529
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:527
  */
 static int btRigidBody_getFlags(lua_State *L) {
   try {
@@ -1181,7 +1164,7 @@ static int btRigidBody_getFlags(lua_State *L) {
 }
 
 /** btVector3 btRigidBody::computeGyroscopicForce(btScalar maxGyroscopicForce) const
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:534
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:532
  */
 static int btRigidBody_computeGyroscopicForce(lua_State *L) {
   try {
@@ -1198,7 +1181,7 @@ static int btRigidBody_computeGyroscopicForce(lua_State *L) {
 }
 
 /** virtual int btRigidBody::calculateSerializeBufferSize() const
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:538
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:536
  */
 static int btRigidBody_calculateSerializeBufferSize(lua_State *L) {
   try {
@@ -1214,7 +1197,7 @@ static int btRigidBody_calculateSerializeBufferSize(lua_State *L) {
 }
 
 /** virtual const char* btRigidBody::serialize(void *dataBuffer, class btSerializer *serializer) const
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:541
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:539
  */
 static int btRigidBody_serialize(lua_State *L) {
   try {
@@ -1232,7 +1215,7 @@ static int btRigidBody_serialize(lua_State *L) {
 }
 
 /** virtual void btRigidBody::serializeSingleObject(class btSerializer *serializer) const
- * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:543
+ * src/vendor/bullet/src/BulletDynamics/Dynamics/btRigidBody.h:541
  */
 static int btRigidBody_serializeSingleObject(lua_State *L) {
   try {
@@ -1267,7 +1250,7 @@ static int btRigidBody_upcast(lua_State *L) {
 }
 
 /** bool btCollisionObject::mergesSimulationIslands() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:156
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:153
  */
 static int btRigidBody_mergesSimulationIslands(lua_State *L) {
   try {
@@ -1283,7 +1266,7 @@ static int btRigidBody_mergesSimulationIslands(lua_State *L) {
 }
 
 /** const btVector3& btCollisionObject::getAnisotropicFriction() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:162
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:159
  */
 static int btRigidBody_getAnisotropicFriction(lua_State *L) {
   try {
@@ -1299,7 +1282,7 @@ static int btRigidBody_getAnisotropicFriction(lua_State *L) {
 }
 
 /** void btCollisionObject::setAnisotropicFriction(const btVector3 &anisotropicFriction, int frictionMode=CF_ANISOTROPIC_FRICTION)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:166
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:163
  */
 static int btRigidBody_setAnisotropicFriction(lua_State *L) {
   try {
@@ -1324,7 +1307,7 @@ static int btRigidBody_setAnisotropicFriction(lua_State *L) {
 }
 
 /** bool btCollisionObject::hasAnisotropicFriction(int frictionMode=CF_ANISOTROPIC_FRICTION) const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:172
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:169
  */
 static int btRigidBody_hasAnisotropicFriction(lua_State *L) {
   try {
@@ -1347,7 +1330,7 @@ static int btRigidBody_hasAnisotropicFriction(lua_State *L) {
 }
 
 /** void btCollisionObject::setContactProcessingThreshold(btScalar contactProcessingThreshold)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:179
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:176
  */
 static int btRigidBody_setContactProcessingThreshold(lua_State *L) {
   try {
@@ -1364,7 +1347,7 @@ static int btRigidBody_setContactProcessingThreshold(lua_State *L) {
 }
 
 /** btScalar btCollisionObject::getContactProcessingThreshold() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:183
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:180
  */
 static int btRigidBody_getContactProcessingThreshold(lua_State *L) {
   try {
@@ -1380,7 +1363,7 @@ static int btRigidBody_getContactProcessingThreshold(lua_State *L) {
 }
 
 /** bool btCollisionObject::isStaticObject() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:188
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:185
  */
 static int btRigidBody_isStaticObject(lua_State *L) {
   try {
@@ -1396,7 +1379,7 @@ static int btRigidBody_isStaticObject(lua_State *L) {
 }
 
 /** bool btCollisionObject::isKinematicObject() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:192
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:189
  */
 static int btRigidBody_isKinematicObject(lua_State *L) {
   try {
@@ -1412,7 +1395,7 @@ static int btRigidBody_isKinematicObject(lua_State *L) {
 }
 
 /** bool btCollisionObject::isStaticOrKinematicObject() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:197
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:194
  */
 static int btRigidBody_isStaticOrKinematicObject(lua_State *L) {
   try {
@@ -1428,7 +1411,7 @@ static int btRigidBody_isStaticOrKinematicObject(lua_State *L) {
 }
 
 /** bool btCollisionObject::hasContactResponse() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:202
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:199
  */
 static int btRigidBody_hasContactResponse(lua_State *L) {
   try {
@@ -1444,7 +1427,7 @@ static int btRigidBody_hasContactResponse(lua_State *L) {
 }
 
 /** virtual void btCollisionObject::setCollisionShape(btCollisionShape *collisionShape)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:211
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:208
  */
 static int btRigidBody_setCollisionShape(lua_State *L) {
   try {
@@ -1460,8 +1443,43 @@ static int btRigidBody_setCollisionShape(lua_State *L) {
   return dub::error(L);
 }
 
+/** void btCollisionObject::setIgnoreCollisionCheck(const btCollisionObject *co, bool ignoreCollisionCheck)
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:225
+ */
+static int btRigidBody_setIgnoreCollisionCheck(lua_State *L) {
+  try {
+    btRigidBody *self = *((btRigidBody **)dub::checksdata(L, 1, "bt.RigidBody"));
+    btCollisionObject *co = *((btCollisionObject **)dub::checksdata(L, 2, "bt.CollisionObject"));
+    bool ignoreCollisionCheck = dub::checkboolean(L, 3);
+    self->setIgnoreCollisionCheck(co, ignoreCollisionCheck);
+    return 0;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "setIgnoreCollisionCheck: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "setIgnoreCollisionCheck: Unknown exception");
+  }
+  return dub::error(L);
+}
+
+/** virtual bool btCollisionObject::checkCollideWithOverride(const btCollisionObject *co) const
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:243
+ */
+static int btRigidBody_checkCollideWithOverride(lua_State *L) {
+  try {
+    btRigidBody *self = *((btRigidBody **)dub::checksdata(L, 1, "bt.RigidBody"));
+    btCollisionObject *co = *((btCollisionObject **)dub::checksdata(L, 2, "bt.CollisionObject"));
+    lua_pushboolean(L, self->checkCollideWithOverride(co));
+    return 1;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "checkCollideWithOverride: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "checkCollideWithOverride: Unknown exception");
+  }
+  return dub::error(L);
+}
+
 /** void* btCollisionObject::internalGetExtensionPointer() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:234
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:258
  */
 static int btRigidBody_internalGetExtensionPointer(lua_State *L) {
   try {
@@ -1477,7 +1495,7 @@ static int btRigidBody_internalGetExtensionPointer(lua_State *L) {
 }
 
 /** void btCollisionObject::internalSetExtensionPointer(void *pointer)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:240
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:264
  */
 static int btRigidBody_internalSetExtensionPointer(lua_State *L) {
   try {
@@ -1494,7 +1512,7 @@ static int btRigidBody_internalSetExtensionPointer(lua_State *L) {
 }
 
 /** int btCollisionObject::getActivationState() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:245
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:269
  */
 static int btRigidBody_getActivationState(lua_State *L) {
   try {
@@ -1510,7 +1528,7 @@ static int btRigidBody_getActivationState(lua_State *L) {
 }
 
 /** void btCollisionObject::setActivationState(int newState) const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:247
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:271
  */
 static int btRigidBody_setActivationState(lua_State *L) {
   try {
@@ -1527,7 +1545,7 @@ static int btRigidBody_setActivationState(lua_State *L) {
 }
 
 /** void btCollisionObject::setDeactivationTime(btScalar time)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:249
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:273
  */
 static int btRigidBody_setDeactivationTime(lua_State *L) {
   try {
@@ -1544,7 +1562,7 @@ static int btRigidBody_setDeactivationTime(lua_State *L) {
 }
 
 /** btScalar btCollisionObject::getDeactivationTime() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:253
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:277
  */
 static int btRigidBody_getDeactivationTime(lua_State *L) {
   try {
@@ -1560,7 +1578,7 @@ static int btRigidBody_getDeactivationTime(lua_State *L) {
 }
 
 /** void btCollisionObject::forceActivationState(int newState) const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:258
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:282
  */
 static int btRigidBody_forceActivationState(lua_State *L) {
   try {
@@ -1577,7 +1595,7 @@ static int btRigidBody_forceActivationState(lua_State *L) {
 }
 
 /** void btCollisionObject::activate(bool forceActivation=false) const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:260
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:284
  */
 static int btRigidBody_activate(lua_State *L) {
   try {
@@ -1600,7 +1618,7 @@ static int btRigidBody_activate(lua_State *L) {
 }
 
 /** bool btCollisionObject::isActive() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:262
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:286
  */
 static int btRigidBody_isActive(lua_State *L) {
   try {
@@ -1616,7 +1634,7 @@ static int btRigidBody_isActive(lua_State *L) {
 }
 
 /** void btCollisionObject::setRestitution(btScalar rest)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:267
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:291
  */
 static int btRigidBody_setRestitution(lua_State *L) {
   try {
@@ -1633,7 +1651,7 @@ static int btRigidBody_setRestitution(lua_State *L) {
 }
 
 /** btScalar btCollisionObject::getRestitution() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:272
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:296
  */
 static int btRigidBody_getRestitution(lua_State *L) {
   try {
@@ -1649,7 +1667,7 @@ static int btRigidBody_getRestitution(lua_State *L) {
 }
 
 /** void btCollisionObject::setFriction(btScalar frict)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:276
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:300
  */
 static int btRigidBody_setFriction(lua_State *L) {
   try {
@@ -1666,7 +1684,7 @@ static int btRigidBody_setFriction(lua_State *L) {
 }
 
 /** btScalar btCollisionObject::getFriction() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:281
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:305
  */
 static int btRigidBody_getFriction(lua_State *L) {
   try {
@@ -1682,7 +1700,7 @@ static int btRigidBody_getFriction(lua_State *L) {
 }
 
 /** void btCollisionObject::setRollingFriction(btScalar frict)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:286
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:310
  */
 static int btRigidBody_setRollingFriction(lua_State *L) {
   try {
@@ -1699,7 +1717,7 @@ static int btRigidBody_setRollingFriction(lua_State *L) {
 }
 
 /** btScalar btCollisionObject::getRollingFriction() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:291
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:315
  */
 static int btRigidBody_getRollingFriction(lua_State *L) {
   try {
@@ -1715,7 +1733,7 @@ static int btRigidBody_getRollingFriction(lua_State *L) {
 }
 
 /** int btCollisionObject::getInternalType() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:298
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:322
  */
 static int btRigidBody_getInternalType(lua_State *L) {
   try {
@@ -1731,7 +1749,7 @@ static int btRigidBody_getInternalType(lua_State *L) {
 }
 
 /** btTransform& btCollisionObject::getWorldTransform()
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:303
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:327
  */
 static int btRigidBody_getWorldTransform(lua_State *L) {
   try {
@@ -1747,7 +1765,7 @@ static int btRigidBody_getWorldTransform(lua_State *L) {
 }
 
 /** void btCollisionObject::setWorldTransform(const btTransform &worldTrans)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:313
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:337
  */
 static int btRigidBody_setWorldTransform(lua_State *L) {
   try {
@@ -1764,7 +1782,7 @@ static int btRigidBody_setWorldTransform(lua_State *L) {
 }
 
 /** btBroadphaseProxy* btCollisionObject::getBroadphaseHandle()
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:320
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:344
  */
 static int btRigidBody_getBroadphaseHandle(lua_State *L) {
   try {
@@ -1782,7 +1800,7 @@ static int btRigidBody_getBroadphaseHandle(lua_State *L) {
 }
 
 /** void btCollisionObject::setBroadphaseHandle(btBroadphaseProxy *handle)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:330
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:354
  */
 static int btRigidBody_setBroadphaseHandle(lua_State *L) {
   try {
@@ -1799,7 +1817,7 @@ static int btRigidBody_setBroadphaseHandle(lua_State *L) {
 }
 
 /** const btTransform& btCollisionObject::getInterpolationWorldTransform() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:336
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:360
  */
 static int btRigidBody_getInterpolationWorldTransform(lua_State *L) {
   try {
@@ -1815,7 +1833,7 @@ static int btRigidBody_getInterpolationWorldTransform(lua_State *L) {
 }
 
 /** void btCollisionObject::setInterpolationWorldTransform(const btTransform &trans)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:346
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:370
  */
 static int btRigidBody_setInterpolationWorldTransform(lua_State *L) {
   try {
@@ -1832,7 +1850,7 @@ static int btRigidBody_setInterpolationWorldTransform(lua_State *L) {
 }
 
 /** void btCollisionObject::setInterpolationLinearVelocity(const btVector3 &linvel)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:352
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:376
  */
 static int btRigidBody_setInterpolationLinearVelocity(lua_State *L) {
   try {
@@ -1849,7 +1867,7 @@ static int btRigidBody_setInterpolationLinearVelocity(lua_State *L) {
 }
 
 /** void btCollisionObject::setInterpolationAngularVelocity(const btVector3 &angvel)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:358
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:382
  */
 static int btRigidBody_setInterpolationAngularVelocity(lua_State *L) {
   try {
@@ -1866,7 +1884,7 @@ static int btRigidBody_setInterpolationAngularVelocity(lua_State *L) {
 }
 
 /** const btVector3& btCollisionObject::getInterpolationLinearVelocity() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:364
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:388
  */
 static int btRigidBody_getInterpolationLinearVelocity(lua_State *L) {
   try {
@@ -1882,7 +1900,7 @@ static int btRigidBody_getInterpolationLinearVelocity(lua_State *L) {
 }
 
 /** const btVector3& btCollisionObject::getInterpolationAngularVelocity() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:369
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:393
  */
 static int btRigidBody_getInterpolationAngularVelocity(lua_State *L) {
   try {
@@ -1898,7 +1916,7 @@ static int btRigidBody_getInterpolationAngularVelocity(lua_State *L) {
 }
 
 /** int btCollisionObject::getIslandTag() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:374
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:398
  */
 static int btRigidBody_getIslandTag(lua_State *L) {
   try {
@@ -1914,7 +1932,7 @@ static int btRigidBody_getIslandTag(lua_State *L) {
 }
 
 /** void btCollisionObject::setIslandTag(int tag)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:379
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:403
  */
 static int btRigidBody_setIslandTag(lua_State *L) {
   try {
@@ -1931,7 +1949,7 @@ static int btRigidBody_setIslandTag(lua_State *L) {
 }
 
 /** int btCollisionObject::getCompanionId() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:384
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:408
  */
 static int btRigidBody_getCompanionId(lua_State *L) {
   try {
@@ -1947,7 +1965,7 @@ static int btRigidBody_getCompanionId(lua_State *L) {
 }
 
 /** void btCollisionObject::setCompanionId(int id)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:389
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:413
  */
 static int btRigidBody_setCompanionId(lua_State *L) {
   try {
@@ -1964,7 +1982,7 @@ static int btRigidBody_setCompanionId(lua_State *L) {
 }
 
 /** btScalar btCollisionObject::getHitFraction() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:394
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:418
  */
 static int btRigidBody_getHitFraction(lua_State *L) {
   try {
@@ -1980,7 +1998,7 @@ static int btRigidBody_getHitFraction(lua_State *L) {
 }
 
 /** void btCollisionObject::setHitFraction(btScalar hitFraction)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:399
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:423
  */
 static int btRigidBody_setHitFraction(lua_State *L) {
   try {
@@ -1997,7 +2015,7 @@ static int btRigidBody_setHitFraction(lua_State *L) {
 }
 
 /** int btCollisionObject::getCollisionFlags() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:405
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:429
  */
 static int btRigidBody_getCollisionFlags(lua_State *L) {
   try {
@@ -2013,7 +2031,7 @@ static int btRigidBody_getCollisionFlags(lua_State *L) {
 }
 
 /** void btCollisionObject::setCollisionFlags(int flags)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:410
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:434
  */
 static int btRigidBody_setCollisionFlags(lua_State *L) {
   try {
@@ -2030,7 +2048,7 @@ static int btRigidBody_setCollisionFlags(lua_State *L) {
 }
 
 /** btScalar btCollisionObject::getCcdSweptSphereRadius() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:416
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:440
  */
 static int btRigidBody_getCcdSweptSphereRadius(lua_State *L) {
   try {
@@ -2046,7 +2064,7 @@ static int btRigidBody_getCcdSweptSphereRadius(lua_State *L) {
 }
 
 /** void btCollisionObject::setCcdSweptSphereRadius(btScalar radius)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:422
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:446
  */
 static int btRigidBody_setCcdSweptSphereRadius(lua_State *L) {
   try {
@@ -2063,7 +2081,7 @@ static int btRigidBody_setCcdSweptSphereRadius(lua_State *L) {
 }
 
 /** btScalar btCollisionObject::getCcdMotionThreshold() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:427
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:451
  */
 static int btRigidBody_getCcdMotionThreshold(lua_State *L) {
   try {
@@ -2079,7 +2097,7 @@ static int btRigidBody_getCcdMotionThreshold(lua_State *L) {
 }
 
 /** btScalar btCollisionObject::getCcdSquareMotionThreshold() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:432
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:456
  */
 static int btRigidBody_getCcdSquareMotionThreshold(lua_State *L) {
   try {
@@ -2095,7 +2113,7 @@ static int btRigidBody_getCcdSquareMotionThreshold(lua_State *L) {
 }
 
 /** void btCollisionObject::setCcdMotionThreshold(btScalar ccdMotionThreshold)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:440
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:464
  */
 static int btRigidBody_setCcdMotionThreshold(lua_State *L) {
   try {
@@ -2112,7 +2130,7 @@ static int btRigidBody_setCcdMotionThreshold(lua_State *L) {
 }
 
 /** void* btCollisionObject::getUserPointer() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:446
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:470
  */
 static int btRigidBody_getUserPointer(lua_State *L) {
   try {
@@ -2128,7 +2146,7 @@ static int btRigidBody_getUserPointer(lua_State *L) {
 }
 
 /** int btCollisionObject::getUserIndex() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:451
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:475
  */
 static int btRigidBody_getUserIndex(lua_State *L) {
   try {
@@ -2144,7 +2162,7 @@ static int btRigidBody_getUserIndex(lua_State *L) {
 }
 
 /** void btCollisionObject::setUserPointer(void *userPointer)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:456
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:480
  */
 static int btRigidBody_setUserPointer(lua_State *L) {
   try {
@@ -2161,7 +2179,7 @@ static int btRigidBody_setUserPointer(lua_State *L) {
 }
 
 /** void btCollisionObject::setUserIndex(int index)
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:462
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:486
  */
 static int btRigidBody_setUserIndex(lua_State *L) {
   try {
@@ -2178,7 +2196,7 @@ static int btRigidBody_setUserIndex(lua_State *L) {
 }
 
 /** int btCollisionObject::getUpdateRevisionInternal() const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:467
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:491
  */
 static int btRigidBody_getUpdateRevisionInternal(lua_State *L) {
   try {
@@ -2194,7 +2212,7 @@ static int btRigidBody_getUpdateRevisionInternal(lua_State *L) {
 }
 
 /** bool btCollisionObject::checkCollideWith(const btCollisionObject *co) const
- * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:473
+ * src/vendor/bullet/src/BulletCollision/CollisionDispatch/btCollisionObject.h:497
  */
 static int btRigidBody_checkCollideWith(lua_State *L) {
   try {
@@ -2282,7 +2300,6 @@ static const struct luaL_Reg btRigidBody_member_methods[] = {
   { "setAngularFactor", btRigidBody_setAngularFactor },
   { "getAngularFactor", btRigidBody_getAngularFactor },
   { "isInWorld"    , btRigidBody_isInWorld },
-  { "checkCollideWithOverride", btRigidBody_checkCollideWithOverride },
   { "addConstraintRef", btRigidBody_addConstraintRef },
   { "removeConstraintRef", btRigidBody_removeConstraintRef },
   { "getConstraintRef", btRigidBody_getConstraintRef },
@@ -2305,6 +2322,8 @@ static const struct luaL_Reg btRigidBody_member_methods[] = {
   { "isStaticOrKinematicObject", btRigidBody_isStaticOrKinematicObject },
   { "hasContactResponse", btRigidBody_hasContactResponse },
   { "setCollisionShape", btRigidBody_setCollisionShape },
+  { "setIgnoreCollisionCheck", btRigidBody_setIgnoreCollisionCheck },
+  { "checkCollideWithOverride", btRigidBody_checkCollideWithOverride },
   { "internalGetExtensionPointer", btRigidBody_internalGetExtensionPointer },
   { "internalSetExtensionPointer", btRigidBody_internalSetExtensionPointer },
   { "getActivationState", btRigidBody_getActivationState },

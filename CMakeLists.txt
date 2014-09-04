@@ -12,13 +12,21 @@ cmake_minimum_required(VERSION 2.8)
 # --------------------------------------------------------------
 set(MODULE_NAME bt)
 
-# Where to install files
+# Where to install Lua files
 if(LUA_INSTALL_DIR)
   set(INSTALL_PATH ${LUA_INSTALL_DIR})
 else(LUA_INSTALL_DIR)
   set(INSTALL_PATH "${CMAKE_BINARY_DIR}/lib" CACHE STRING "Install directory path")
 endif(LUA_INSTALL_DIR)
-message("INSTALL 'bt' TO '${INSTALL_PATH}'")
+message("INSTALL Lua    'bt' TO '${INSTALL_PATH}'")
+
+# Where to install binary modules
+if(LUA_INSTALL_BINDIR)
+  set(INSTALL_BINPATH ${LUA_INSTALL_BINDIR})
+else(LUA_INSTALL_BINDIR)
+  set(INSTALL_BINPATH "${CMAKE_BINARY_DIR}/lib" CACHE STRING "Install directory path")
+endif(LUA_INSTALL_BINDIR)
+message("INSTALL binary 'bt' TO '${INSTALL_BINPATH}'")
 
 # --------------------------------------------------------------
 #  module
@@ -56,7 +64,7 @@ endif(RELEASE)
 # --------------------------------------------------------------
 set(core "${MODULE_NAME}_core")
 
-include_directories(/usr/local/include include src/bind src/vendor/bullet/src)
+include_directories(/usr/local/include /usr/local/include include src/bind src/vendor/bullet/src)
 
 file(GLOB CORE_SOURCES src/*.cpp src/bind/*.cpp src/bind/dub/*.cpp)
 
@@ -81,7 +89,7 @@ add_dependencies(${MODULE_NAME} ${core})
 #  install                                     
 # --------------------------------------------------------------
 install(TARGETS ${core}
-  DESTINATION ${INSTALL_PATH}/${MODULE_NAME}
+  DESTINATION ${INSTALL_BINPATH}/${MODULE_NAME}
 )
 
 # --------------------------------------------------------------

@@ -57,6 +57,7 @@ int luaopen_bt_CollisionObject(lua_State *L);
 int luaopen_bt_CollisionShape(lua_State *L);
 int luaopen_bt_CollisionWorld(lua_State *L);
 int luaopen_bt_ConcaveShape(lua_State *L);
+int luaopen_bt_ConstraintSetting(lua_State *L);
 int luaopen_bt_ConstraintSolver(lua_State *L);
 int luaopen_bt_ConvexInternalShape(lua_State *L);
 int luaopen_bt_ConvexShape(lua_State *L);
@@ -409,7 +410,7 @@ static int bt_btGetVersion(lua_State *L) {
 }
 
 /** btScalar btSqrt(btScalar y)
- * src/vendor/bullet/src/LinearMath/btScalar.h:387
+ * src/vendor/bullet/src/LinearMath/btScalar.h:411
  */
 static int bt_btSqrt(lua_State *L) {
   try {
@@ -425,7 +426,7 @@ static int bt_btSqrt(lua_State *L) {
 }
 
 /** btScalar btFabs(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:407
+ * src/vendor/bullet/src/LinearMath/btScalar.h:431
  */
 static int bt_btFabs(lua_State *L) {
   try {
@@ -441,7 +442,7 @@ static int bt_btFabs(lua_State *L) {
 }
 
 /** btScalar btCos(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:408
+ * src/vendor/bullet/src/LinearMath/btScalar.h:432
  */
 static int bt_btCos(lua_State *L) {
   try {
@@ -457,7 +458,7 @@ static int bt_btCos(lua_State *L) {
 }
 
 /** btScalar btSin(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:409
+ * src/vendor/bullet/src/LinearMath/btScalar.h:433
  */
 static int bt_btSin(lua_State *L) {
   try {
@@ -473,7 +474,7 @@ static int bt_btSin(lua_State *L) {
 }
 
 /** btScalar btTan(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:410
+ * src/vendor/bullet/src/LinearMath/btScalar.h:434
  */
 static int bt_btTan(lua_State *L) {
   try {
@@ -489,7 +490,7 @@ static int bt_btTan(lua_State *L) {
 }
 
 /** btScalar btAcos(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:411
+ * src/vendor/bullet/src/LinearMath/btScalar.h:435
  */
 static int bt_btAcos(lua_State *L) {
   try {
@@ -505,7 +506,7 @@ static int bt_btAcos(lua_State *L) {
 }
 
 /** btScalar btAsin(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:418
+ * src/vendor/bullet/src/LinearMath/btScalar.h:442
  */
 static int bt_btAsin(lua_State *L) {
   try {
@@ -521,7 +522,7 @@ static int bt_btAsin(lua_State *L) {
 }
 
 /** btScalar btAtan(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:425
+ * src/vendor/bullet/src/LinearMath/btScalar.h:449
  */
 static int bt_btAtan(lua_State *L) {
   try {
@@ -537,7 +538,7 @@ static int bt_btAtan(lua_State *L) {
 }
 
 /** btScalar btAtan2(btScalar x, btScalar y)
- * src/vendor/bullet/src/LinearMath/btScalar.h:426
+ * src/vendor/bullet/src/LinearMath/btScalar.h:450
  */
 static int bt_btAtan2(lua_State *L) {
   try {
@@ -554,7 +555,7 @@ static int bt_btAtan2(lua_State *L) {
 }
 
 /** btScalar btExp(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:427
+ * src/vendor/bullet/src/LinearMath/btScalar.h:451
  */
 static int bt_btExp(lua_State *L) {
   try {
@@ -570,7 +571,7 @@ static int bt_btExp(lua_State *L) {
 }
 
 /** btScalar btLog(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:428
+ * src/vendor/bullet/src/LinearMath/btScalar.h:452
  */
 static int bt_btLog(lua_State *L) {
   try {
@@ -586,7 +587,7 @@ static int bt_btLog(lua_State *L) {
 }
 
 /** btScalar btPow(btScalar x, btScalar y)
- * src/vendor/bullet/src/LinearMath/btScalar.h:429
+ * src/vendor/bullet/src/LinearMath/btScalar.h:453
  */
 static int bt_btPow(lua_State *L) {
   try {
@@ -603,7 +604,7 @@ static int bt_btPow(lua_State *L) {
 }
 
 /** btScalar btFmod(btScalar x, btScalar y)
- * src/vendor/bullet/src/LinearMath/btScalar.h:430
+ * src/vendor/bullet/src/LinearMath/btScalar.h:454
  */
 static int bt_btFmod(lua_State *L) {
   try {
@@ -620,7 +621,7 @@ static int bt_btFmod(lua_State *L) {
 }
 
 /** btScalar btAtan2Fast(btScalar y, btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:452
+ * src/vendor/bullet/src/LinearMath/btScalar.h:476
  */
 static int bt_btAtan2Fast(lua_State *L) {
   try {
@@ -637,7 +638,7 @@ static int bt_btAtan2Fast(lua_State *L) {
 }
 
 /** bool btFuzzyZero(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:468
+ * src/vendor/bullet/src/LinearMath/btScalar.h:492
  */
 static int bt_btFuzzyZero(lua_State *L) {
   try {
@@ -653,7 +654,7 @@ static int bt_btFuzzyZero(lua_State *L) {
 }
 
 /** bool btEqual(btScalar a, btScalar eps)
- * src/vendor/bullet/src/LinearMath/btScalar.h:470
+ * src/vendor/bullet/src/LinearMath/btScalar.h:494
  */
 static int bt_btEqual(lua_State *L) {
   try {
@@ -670,7 +671,7 @@ static int bt_btEqual(lua_State *L) {
 }
 
 /** bool btGreaterEqual(btScalar a, btScalar eps)
- * src/vendor/bullet/src/LinearMath/btScalar.h:473
+ * src/vendor/bullet/src/LinearMath/btScalar.h:497
  */
 static int bt_btGreaterEqual(lua_State *L) {
   try {
@@ -687,7 +688,7 @@ static int bt_btGreaterEqual(lua_State *L) {
 }
 
 /** int btIsNegative(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:478
+ * src/vendor/bullet/src/LinearMath/btScalar.h:502
  */
 static int bt_btIsNegative(lua_State *L) {
   try {
@@ -703,7 +704,7 @@ static int bt_btIsNegative(lua_State *L) {
 }
 
 /** btScalar btRadians(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:482
+ * src/vendor/bullet/src/LinearMath/btScalar.h:506
  */
 static int bt_btRadians(lua_State *L) {
   try {
@@ -719,7 +720,7 @@ static int bt_btRadians(lua_State *L) {
 }
 
 /** btScalar btDegrees(btScalar x)
- * src/vendor/bullet/src/LinearMath/btScalar.h:483
+ * src/vendor/bullet/src/LinearMath/btScalar.h:507
  */
 static int bt_btDegrees(lua_State *L) {
   try {
@@ -735,7 +736,7 @@ static int bt_btDegrees(lua_State *L) {
 }
 
 /** btScalar btFsel(btScalar a, btScalar b, btScalar c)
- * src/vendor/bullet/src/LinearMath/btScalar.h:488
+ * src/vendor/bullet/src/LinearMath/btScalar.h:512
  */
 static int bt_btFsel(lua_State *L) {
   try {
@@ -753,7 +754,7 @@ static int bt_btFsel(lua_State *L) {
 }
 
 /** bool btMachineIsLittleEndian()
- * src/vendor/bullet/src/LinearMath/btScalar.h:496
+ * src/vendor/bullet/src/LinearMath/btScalar.h:520
  */
 static int bt_btMachineIsLittleEndian(lua_State *L) {
   try {
@@ -768,7 +769,7 @@ static int bt_btMachineIsLittleEndian(lua_State *L) {
 }
 
 /** btScalar btLargeDot(const btScalar *a, const btScalar *b, int n)
- * src/vendor/bullet/src/LinearMath/btScalar.h:646
+ * src/vendor/bullet/src/LinearMath/btScalar.h:670
  */
 static int bt_btLargeDot(lua_State *L) {
   try {
@@ -786,7 +787,7 @@ static int bt_btLargeDot(lua_State *L) {
 }
 
 /** btScalar btNormalizeAngle(btScalar angleInRadians)
- * src/vendor/bullet/src/LinearMath/btScalar.h:674
+ * src/vendor/bullet/src/LinearMath/btScalar.h:698
  */
 static int bt_btNormalizeAngle(lua_State *L) {
   try {
@@ -802,7 +803,7 @@ static int bt_btNormalizeAngle(lua_State *L) {
 }
 
 /** btVector3 operator/(const btVector3 &v, const btScalar &s)
- * src/vendor/bullet/src/LinearMath/btVector3.h:841
+ * src/vendor/bullet/src/LinearMath/btVector3.h:842
  */
 static int bt_operator_div(lua_State *L) {
   try {
@@ -827,7 +828,7 @@ static int bt_operator_div(lua_State *L) {
 }
 
 /** btScalar btDot(const btVector3 &v1, const btVector3 &v2)
- * src/vendor/bullet/src/LinearMath/btVector3.h:888
+ * src/vendor/bullet/src/LinearMath/btVector3.h:889
  */
 static int bt_btDot(lua_State *L) {
   try {
@@ -844,7 +845,7 @@ static int bt_btDot(lua_State *L) {
 }
 
 /** btScalar btDistance2(const btVector3 &v1, const btVector3 &v2)
- * src/vendor/bullet/src/LinearMath/btVector3.h:896
+ * src/vendor/bullet/src/LinearMath/btVector3.h:897
  */
 static int bt_btDistance2(lua_State *L) {
   try {
@@ -861,7 +862,7 @@ static int bt_btDistance2(lua_State *L) {
 }
 
 /** btScalar btDistance(const btVector3 &v1, const btVector3 &v2)
- * src/vendor/bullet/src/LinearMath/btVector3.h:904
+ * src/vendor/bullet/src/LinearMath/btVector3.h:905
  */
 static int bt_btDistance(lua_State *L) {
   try {
@@ -878,7 +879,7 @@ static int bt_btDistance(lua_State *L) {
 }
 
 /** btVector3 btCross(const btVector3 &v1, const btVector3 &v2)
- * src/vendor/bullet/src/LinearMath/btVector3.h:918
+ * src/vendor/bullet/src/LinearMath/btVector3.h:919
  */
 static int bt_btCross(lua_State *L) {
   try {
@@ -895,7 +896,7 @@ static int bt_btCross(lua_State *L) {
 }
 
 /** btScalar btTriple(const btVector3 &v1, const btVector3 &v2, const btVector3 &v3)
- * src/vendor/bullet/src/LinearMath/btVector3.h:924
+ * src/vendor/bullet/src/LinearMath/btVector3.h:925
  */
 static int bt_btTriple(lua_State *L) {
   try {
@@ -913,7 +914,7 @@ static int bt_btTriple(lua_State *L) {
 }
 
 /** btVector3 lerp(const btVector3 &v1, const btVector3 &v2, const btScalar &t)
- * src/vendor/bullet/src/LinearMath/btVector3.h:934
+ * src/vendor/bullet/src/LinearMath/btVector3.h:935
  */
 static int bt_lerp(lua_State *L) {
   try {
@@ -931,7 +932,7 @@ static int bt_lerp(lua_State *L) {
 }
 
 /** void btSwapScalarEndian(const btScalar &sourceVal, btScalar &destVal)
- * src/vendor/bullet/src/LinearMath/btVector3.h:1226
+ * src/vendor/bullet/src/LinearMath/btVector3.h:1227
  */
 static int bt_btSwapScalarEndian(lua_State *L) {
   try {
@@ -948,7 +949,7 @@ static int bt_btSwapScalarEndian(lua_State *L) {
 }
 
 /** void btSwapVector3Endian(const btVector3 &sourceVec, btVector3 &destVec)
- * src/vendor/bullet/src/LinearMath/btVector3.h:1249
+ * src/vendor/bullet/src/LinearMath/btVector3.h:1250
  */
 static int bt_btSwapVector3Endian(lua_State *L) {
   try {
@@ -965,7 +966,7 @@ static int bt_btSwapVector3Endian(lua_State *L) {
 }
 
 /** void btUnSwapVector3Endian(btVector3 &vector)
- * src/vendor/bullet/src/LinearMath/btVector3.h:1259
+ * src/vendor/bullet/src/LinearMath/btVector3.h:1260
  */
 static int bt_btUnSwapVector3Endian(lua_State *L) {
   try {
@@ -1042,6 +1043,7 @@ static const struct dub::const_Reg bt_const[] = {
   { "PHY_UCHAR"    , ::PHY_UCHAR          },
   { "BT_SEQUENTIAL_IMPULSE_SOLVER", ::BT_SEQUENTIAL_IMPULSE_SOLVER },
   { "BT_MLCP_SOLVER", ::BT_MLCP_SOLVER     },
+  { "BT_NNCG_SOLVER", ::BT_NNCG_SOLVER     },
   { "BT_SIMPLE_DYNAMICS_WORLD", ::BT_SIMPLE_DYNAMICS_WORLD },
   { "BT_DISCRETE_DYNAMICS_WORLD", ::BT_DISCRETE_DYNAMICS_WORLD },
   { "BT_CONTINUOUS_DYNAMICS_WORLD", ::BT_CONTINUOUS_DYNAMICS_WORLD },
@@ -1099,6 +1101,10 @@ extern "C" int luaopen_bt_core(lua_State *L) {
   luaopen_bt_ConcaveShape(L);
   // <bt.ConcaveShape>
   lua_setfield(L, -2, "ConcaveShape");
+  
+  luaopen_bt_ConstraintSetting(L);
+  // <bt.ConstraintSetting>
+  lua_setfield(L, -2, "ConstraintSetting");
   
   luaopen_bt_ConstraintSolver(L);
   // <bt.ConstraintSolver>

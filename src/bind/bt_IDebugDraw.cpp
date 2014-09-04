@@ -11,7 +11,7 @@
 
 
 /** virtual btIDebugDraw::~btIDebugDraw()
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:53
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:54
  */
 static int btIDebugDraw__btIDebugDraw(lua_State *L) {
   try {
@@ -31,7 +31,7 @@ static int btIDebugDraw__btIDebugDraw(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawLine(const btVector3 &from, const btVector3 &to, const btVector3 &color)=0
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:55
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:56
  */
 static int btIDebugDraw_drawLine(lua_State *L) {
   try {
@@ -60,7 +60,7 @@ static int btIDebugDraw_drawLine(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawSphere(btScalar radius, const btTransform &transform, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:63
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:64
  */
 static int btIDebugDraw_drawSphere(lua_State *L) {
   try {
@@ -88,7 +88,7 @@ static int btIDebugDraw_drawSphere(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawTriangle(const btVector3 &v0, const btVector3 &v1, const btVector3 &v2, const btVector3 &, const btVector3 &, const btVector3 &, const btVector3 &color, btScalar alpha)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:86
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:87
  */
 static int btIDebugDraw_drawTriangle(lua_State *L) {
   try {
@@ -123,7 +123,7 @@ static int btIDebugDraw_drawTriangle(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawContactPoint(const btVector3 &PointOnB, const btVector3 &normalOnB, btScalar distance, int lifeTime, const btVector3 &color)=0
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:97
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:98
  */
 static int btIDebugDraw_drawContactPoint(lua_State *L) {
   try {
@@ -144,7 +144,7 @@ static int btIDebugDraw_drawContactPoint(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::reportErrorWarning(const char *warningString)=0
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:99
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:100
  */
 static int btIDebugDraw_reportErrorWarning(lua_State *L) {
   try {
@@ -161,7 +161,7 @@ static int btIDebugDraw_reportErrorWarning(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::draw3dText(const btVector3 &location, const char *textString)=0
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:101
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:102
  */
 static int btIDebugDraw_draw3dText(lua_State *L) {
   try {
@@ -179,7 +179,7 @@ static int btIDebugDraw_draw3dText(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::setDebugMode(int debugMode)=0
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:103
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:104
  */
 static int btIDebugDraw_setDebugMode(lua_State *L) {
   try {
@@ -196,7 +196,7 @@ static int btIDebugDraw_setDebugMode(lua_State *L) {
 }
 
 /** virtual int btIDebugDraw::getDebugMode() const =0
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:105
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:106
  */
 static int btIDebugDraw_getDebugMode(lua_State *L) {
   try {
@@ -212,7 +212,7 @@ static int btIDebugDraw_getDebugMode(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawAabb(const btVector3 &from, const btVector3 &to, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:107
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:108
  */
 static int btIDebugDraw_drawAabb(lua_State *L) {
   try {
@@ -231,7 +231,7 @@ static int btIDebugDraw_drawAabb(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawTransform(const btTransform &transform, btScalar orthoLen)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:136
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:137
  */
 static int btIDebugDraw_drawTransform(lua_State *L) {
   try {
@@ -249,7 +249,7 @@ static int btIDebugDraw_drawTransform(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawArc(const btVector3 &center, const btVector3 &normal, const btVector3 &axis, btScalar radiusA, btScalar radiusB, btScalar minAngle, btScalar maxAngle, const btVector3 &color, bool drawSect, btScalar stepDegrees=btScalar(10.f))
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:144
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:145
  */
 static int btIDebugDraw_drawArc(lua_State *L) {
   try {
@@ -290,7 +290,7 @@ static int btIDebugDraw_drawArc(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawSpherePatch(const btVector3 &center, const btVector3 &up, const btVector3 &axis, btScalar radius, btScalar minTh, btScalar maxTh, btScalar minPs, btScalar maxPs, const btVector3 &color, btScalar stepDegrees=btScalar(10.f), bool drawCenter=true)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:169
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:170
  */
 static int btIDebugDraw_drawSpherePatch(lua_State *L) {
   try {
@@ -345,7 +345,7 @@ static int btIDebugDraw_drawSpherePatch(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawBox(const btVector3 &bbMin, const btVector3 &bbMax, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:276
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:277
  */
 static int btIDebugDraw_drawBox(lua_State *L) {
   try {
@@ -374,7 +374,7 @@ static int btIDebugDraw_drawBox(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawCapsule(btScalar radius, btScalar halfHeight, int upAxis, const btTransform &transform, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:307
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:308
  */
 static int btIDebugDraw_drawCapsule(lua_State *L) {
   try {
@@ -395,7 +395,7 @@ static int btIDebugDraw_drawCapsule(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawCylinder(btScalar radius, btScalar halfHeight, int upAxis, const btTransform &transform, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:365
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:366
  */
 static int btIDebugDraw_drawCylinder(lua_State *L) {
   try {
@@ -416,7 +416,7 @@ static int btIDebugDraw_drawCylinder(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawCone(btScalar radius, btScalar height, int upAxis, const btTransform &transform, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:391
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:392
  */
 static int btIDebugDraw_drawCone(lua_State *L) {
   try {
@@ -437,7 +437,7 @@ static int btIDebugDraw_drawCone(lua_State *L) {
 }
 
 /** virtual void btIDebugDraw::drawPlane(const btVector3 &planeNormal, btScalar planeConst, const btTransform &transform, const btVector3 &color)
- * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:428
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:429
  */
 static int btIDebugDraw_drawPlane(lua_State *L) {
   try {
@@ -452,6 +452,22 @@ static int btIDebugDraw_drawPlane(lua_State *L) {
     lua_pushfstring(L, "drawPlane: %s", e.what());
   } catch (...) {
     lua_pushfstring(L, "drawPlane: Unknown exception");
+  }
+  return dub::error(L);
+}
+
+/** virtual void btIDebugDraw::flushLines()
+ * src/vendor/bullet/src/LinearMath/btIDebugDraw.h:443
+ */
+static int btIDebugDraw_flushLines(lua_State *L) {
+  try {
+    btIDebugDraw *self = *((btIDebugDraw **)dub::checksdata(L, 1, "bt.IDebugDraw"));
+    self->flushLines();
+    return 0;
+  } catch (std::exception &e) {
+    lua_pushfstring(L, "flushLines: %s", e.what());
+  } catch (...) {
+    lua_pushfstring(L, "flushLines: Unknown exception");
   }
   return dub::error(L);
 }
@@ -487,6 +503,7 @@ static const struct luaL_Reg btIDebugDraw_member_methods[] = {
   { "drawCylinder" , btIDebugDraw_drawCylinder },
   { "drawCone"     , btIDebugDraw_drawCone },
   { "drawPlane"    , btIDebugDraw_drawPlane },
+  { "flushLines"   , btIDebugDraw_flushLines },
   { "__tostring"   , btIDebugDraw___tostring },
   { "deleted"      , dub::isDeleted       },
   { NULL, NULL},
@@ -510,6 +527,7 @@ static const struct dub::const_Reg btIDebugDraw_const[] = {
   { "DBG_DrawConstraintLimits", btIDebugDraw::DBG_DrawConstraintLimits },
   { "DBG_FastWireframe", btIDebugDraw::DBG_FastWireframe },
   { "DBG_DrawNormals", btIDebugDraw::DBG_DrawNormals },
+  { "DBG_DrawFrames", btIDebugDraw::DBG_DrawFrames },
   { "DBG_MAX_DEBUG_DRAW_MODE", btIDebugDraw::DBG_MAX_DEBUG_DRAW_MODE },
   { NULL, 0},
 };
